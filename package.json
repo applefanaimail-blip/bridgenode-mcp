@@ -1,0 +1,72 @@
+{
+  "name": "@bridgenode/mcp",
+  "version": "0.1.8",
+  "mcpName": "io.github.applefanaimail-blip/bridgenode-mcp",
+  "description": "BridgeNode MCP wrapper — stdio MCP server proxying to remote streamable-HTTP /mcp with automatic x402 payments (Solana USDC). No API keys.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "bridgenode-mcp": "dist/index.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test --import tsx tests/spending.test.ts",
+    "test:e2e": "node --test --import tsx tests/e2e.real-payment.test.ts"
+  },
+  "license": "MIT-0",
+  "homepage": "https://bridgenode.cc",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/applefanaimail-blip/bridgenode-mcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "x402",
+    "solana",
+    "usdc",
+    "bridgenode",
+    "ai",
+    "inference",
+    "llm",
+    "agents",
+    "payment",
+    "pay-per-request",
+    "gasless",
+    "no-api-key",
+    "openai-compatible",
+    "streamable-http",
+    "mcp-server",
+    "stablecoin",
+    "micropayments"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "@solana/kit": "^5.5.1",
+    "@x402/core": "~2.21.0",
+    "@x402/mcp": "~2.21.0",
+    "@x402/svm": "~2.21.0",
+    "dotenv": "^17.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "tsx": "^4.20.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "author": "BridgeNode <eli.BNx@proton.me>"
+}
